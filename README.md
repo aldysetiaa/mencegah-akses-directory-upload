@@ -24,12 +24,12 @@ ada banyak cara untuk mengamankan hal ini, salah satunya rename file asli menjad
 <br/>
 1. menambahkan .htaccess pada direktori upload, isinya seperti ini :
 <br/>
-``<IfModule authz_core_module> 
+`<IfModule authz_core_module> 
 	Require all denied 
 </IfModule><br/>
 <IfModule !authz_core_module> 
 	Deny from all 
-</IfModule>``
+</IfModule>`
 <br/>
 simpan kode diatas, dan beri nama .htaccess di dalam folder upload, maka struktur akan menjadi :
 struktur folder :
@@ -47,9 +47,9 @@ bahkan aplikasi yang kita buat untuk preview gambar misalnya menggunakan kode ``
 lalu bagaimana agar gambar tersebut tetap bisa dibuka,
 caranya dengan membuat coding preview dengan manipulasi URL, caranya :<br/>
 1. buat .htaccess di folder awal untuk manipulasi url, menghapus index.php dan file php lain, code :<br/>
-``RewriteEngine On 
+`RewriteEngine On 
 RewriteCond $1 !^(index\.php) 
-RewriteRule ^preview/([^/\.]+)/?$ lihat.php?file=$1  [L]``<br/>
+RewriteRule ^preview/([^/\.]+)/?$ lihat.php?file=$1  [L]` 
 simpan di folder awal, maka struktur menjadi :<br/>
 struktur folder :<br/>
 - app
